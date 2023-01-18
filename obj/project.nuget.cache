@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "UCAFmJbMaGLjEoQQIb1qET/5oBUvl46gBVL4GXc+ETay3yHRZ8tyPJnylUkM1jvr9s7npErbK7NCdjUJXhey/Q==",
+  "success": true,
+  "projectFilePath": "C:\\_playground\\BackgroundProcessor\\BackgroundProcessor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darkom\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\darkom\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\darkom\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\darkom\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
