@@ -22,11 +22,11 @@ namespace BackgroundProcessor
             TEventListener target;
             if (debugMode)
             {
-                target = (TEventListener)_serviceProvider.GetService(typeof(TEventListener))!;
+                target = (TEventListener)_proxyGenerator.CreateClassProxy(typeof(TEventListener), _proxyInterceptor);
             }
             else
             {
-                target = (TEventListener)_proxyGenerator.CreateClassProxy(typeof(TEventListener), _proxyInterceptor);
+                target = (TEventListener)_serviceProvider.GetService(typeof(TEventListener))!;
             }
 
             target.Load(payload);

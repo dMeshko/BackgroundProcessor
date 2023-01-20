@@ -1,10 +1,11 @@
-﻿using BackgroundProcessor.Events;
+﻿using BackgroundProcessor.EventProcessors;
+using BackgroundProcessor.Events.IsoQuest;
 using BackgroundProcessor.Memento;
 using BackgroundProcessor.Repositories;
 
-namespace BackgroundProcessor.EventProcessors
+namespace BackgroundProcessor.EventListeners.IsoQuest
 {
-    public class PersonnelUpdatedEventListener : EventListener<PersonnelUpdatedEventPayload>
+    public class PersonnelUpdatedEventListener : EventListener<PersonnelUpdatedEventPayload>, IEventListenerMemento
     {
         private readonly EventRepository _eventRepository;
 

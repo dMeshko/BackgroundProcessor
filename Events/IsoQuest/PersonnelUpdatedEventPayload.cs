@@ -1,4 +1,4 @@
-﻿namespace BackgroundProcessor.Events
+﻿namespace BackgroundProcessor.Events.IsoQuest
 {
     public class PersonnelUpdatedEventPayload : IEventPayload
     {
