@@ -32,7 +32,8 @@ namespace BackgroundProcessor.EventProcessor
                 {
                     var generic = method.MakeGenericMethod(eventListener, eventPayloadType);
 
-                    var isDebugMode = false; //todo: FIGURE OUT A WAY TO INJECT THIS!!
+                    //NOTE: to enter debug mode call in Immediate window the @event.ToggleDebugMode();
+                    var isDebugMode = @event.DebugMode;
                     var eventListenerHandle = (dynamic) generic.Invoke(_eventListenerFactory, new object[] { payload, isDebugMode });
                     try
                     {
@@ -42,6 +43,9 @@ namespace BackgroundProcessor.EventProcessor
                     {
                         var memento = eventListenerHandle.CreateMemento();
                         _eventListenerMementoRepository.Add(memento); // addOrUpdate
+
+                        @event.HasFailed = true;
+                        _eventRepository.Update(@event);
 
                         Console.WriteLine(exception);
                     }

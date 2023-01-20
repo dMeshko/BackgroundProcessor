@@ -26,5 +26,10 @@ namespace BackgroundProcessor.Repositories
         {
             return events.OrderBy(x => x.CreatedAt).ToList();
         }
+
+        public void Update(Event<IEventPayload> @event)
+        {
+            // do nothing - in memory repo
+        }
     }
 }
