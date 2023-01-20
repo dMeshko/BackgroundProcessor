@@ -1,6 +1,6 @@
 ﻿using BackgroundProcessor.Events;
 
-namespace BackgroundProcessor
+namespace BackgroundProcessor.Repositories
 {
     public class EventRepository
     {

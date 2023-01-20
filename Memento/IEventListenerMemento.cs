@@ -3,7 +3,7 @@
     /// <summary>
     /// Memento originator interface
     /// </summary>
-    public interface IEventProcessorMemento
+    public interface IEventListenerMemento
     {
         IMemento CreateMemento();
         void RestoreMemento(IMemento memento);

@@ -1,8 +1,8 @@
 ﻿using BackgroundProcessor.Memento;
 
-namespace BackgroundProcessor
+namespace BackgroundProcessor.Repositories
 {
-    public class EventProcessorMementoRepository
+    public class EventListenerMementoRepository
     {
         private readonly List<IMemento> mementos = new();
 

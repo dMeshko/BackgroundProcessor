@@ -1,5 +1,6 @@
 ﻿using BackgroundProcessor.Events;
 using BackgroundProcessor.Memento;
+using BackgroundProcessor.Repositories;
 
 namespace BackgroundProcessor.EventProcessors
 {

@@ -1,15 +1,15 @@
-﻿using BackgroundProcessor.EventProcessors;
+﻿using BackgroundProcessor.Repositories;
 using Castle.DynamicProxy;
 
 namespace BackgroundProcessor
 {
     public class ProxyInterceptor : IInterceptor
     {
-        private readonly EventProcessorMementoRepository _eventProcessorMementoRepository;
+        private readonly EventListenerMementoRepository _eventListenerMementoRepository;
 
-        public ProxyInterceptor(EventProcessorMementoRepository eventProcessorMementoRepository)
+        public ProxyInterceptor(EventListenerMementoRepository eventListenerMementoRepository)
         {
-            _eventProcessorMementoRepository = eventProcessorMementoRepository;
+            _eventListenerMementoRepository = eventListenerMementoRepository;
         }
 
         public void Intercept(IInvocation invocation)
@@ -20,7 +20,7 @@ namespace BackgroundProcessor
                 var target = invocation.InvocationTarget;
                 var eventId = (target as dynamic).GetEventId();
 
-                var memento = _eventProcessorMementoRepository.Get(eventId);
+                var memento = _eventListenerMementoRepository.Get(eventId);
                 var overridenValue = memento.GetType().GetProperty(methodName.Replace("set_", "")).GetValue(memento, null);
                 
                 var invocationArguments = invocation.Arguments;
